@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">Calculadora de Viaje</string>
-    <string name="distance_label">Distancia en km</string>
-    <string name="efficiency_label">Rendimiento: %.1f km/L</string>
-    <string name="fuel_type_label">Tipo de Combustible</string>
-    <string name="fuel_regular">Regular</string>
-    <string name="fuel_premium">Premium</string>
-    <string name="fuel_diesel">Diésel</string>
-    <string name="include_tolls">Incluir Casetas ($250.00)</string>
-    <string name="summary_title">Resumen del Viaje</string>
-    <string name="summary_liters">Litros necesarios: %s L</string>
-    <string name="summary_cost">Costo total: %s</string>
-    <string name="expense_low">Gasto Bajo</string>
-    <string name="expense_medium">Gasto Medio</string>
-    <string name="expense_high">Gasto Alto</string>
-    <string name="initial_message">Ingresa la distancia para calcular el costo.</string>
+    <string name="etiqueta_distancia">Distancia en km</string>
+    <string name="etiqueta_rendimiento">Rendimiento: %.1f km/L</string>
+    <string name="etiqueta_tipo_combustible">Tipo de Combustible</string>
+    <string name="combustible_regular">Regular</string>
+    <string name="combustible_premium">Premium</string>
+    <string name="combustible_diesel">Diésel</string>
+    <string name="incluir_casetas">Incluir Casetas ($250.00)</string>
+    <string name="titulo_resumen">Resumen del Viaje</string>
+    <string name="resumen_litros">Litros necesarios: %s L</string>
+    <string name="resumen_costo">Costo total: %s</string>
+    <string name="gasto_bajo">Gasto Bajo</string>
+    <string name="gasto_medio">Gasto Medio</string>
+    <string name="gasto_alto">Gasto Alto</string>
+    <string name="mensaje_inicial">Ingresa la distancia para calcular el costo.</string>
 </resources>

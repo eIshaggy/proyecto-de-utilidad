@@ -9,22 +9,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.up.calculadoradeviaje.R
-import com.up.calculadoradeviaje.model.FuelTripUiState
+import com.up.calculadoradeviaje.model.EstadoUiViaje
 
 @Composable
-fun EfficiencySlider(
-    efficiency: Float,
-    onEfficiencyChange: (Float) -> Unit,
+fun ControlDeslizanteRendimiento(
+    rendimiento: Float,
+    alCambiarRendimiento: (Float) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
         Text(
-            text = stringResource(id = R.string.efficiency_label, efficiency),
+            text = stringResource(id = R.string.etiqueta_rendimiento, rendimiento),
             style = MaterialTheme.typography.bodyLarge
         )
         Slider(
-            value = efficiency,
-            onValueChange = onEfficiencyChange,
+            value = rendimiento,
+            onValueChange = alCambiarRendimiento,
             valueRange = 3f..80f,
             modifier = Modifier.fillMaxWidth()
         )
@@ -32,11 +32,11 @@ fun EfficiencySlider(
 }
 
 @Composable
-fun SummaryCard(
-    successState: FuelTripUiState.Success,
+fun TarjetaResumen(
+    estadoExitoso: EstadoUiViaje.Exitoso,
     modifier: Modifier = Modifier
 ) {
-    val dynamicColor = Color(successState.expenseLevel.colorArgb)
+    val colorDinamico = Color(estadoExitoso.nivelGasto.colorArgb)
 
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -51,33 +51,33 @@ fun SummaryCard(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.summary_title),
+                text = stringResource(id = R.string.titulo_resumen),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
             
             Text(
-                text = stringResource(id = R.string.summary_liters, successState.litersNeeded),
+                text = stringResource(id = R.string.resumen_litros, estadoExitoso.litrosNecesarios),
                 style = MaterialTheme.typography.bodyLarge
             )
             
             Text(
-                text = stringResource(id = R.string.summary_cost, successState.totalCost),
+                text = stringResource(id = R.string.resumen_costo, estadoExitoso.costoTotal),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = dynamicColor
+                color = colorDinamico
             )
             
             Text(
-                text = stringResource(id = successState.expenseLevelTextRes),
+                text = stringResource(id = estadoExitoso.idTextoNivelGasto),
                 style = MaterialTheme.typography.bodyMedium,
-                color = dynamicColor
+                color = colorDinamico
             )
             
             LinearProgressIndicator(
-                progress = { successState.progress },
+                progress = { estadoExitoso.progreso },
                 modifier = Modifier.fillMaxWidth(),
-                color = dynamicColor,
+                color = colorDinamico,
                 trackColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
             )
         }

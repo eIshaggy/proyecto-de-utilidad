@@ -9,12 +9,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.up.calculadoradeviaje.ui.FuelTripScreen
+import com.up.calculadoradeviaje.ui.PantallaCalculadoraViaje
 import com.up.calculadoradeviaje.ui.theme.CalculadoraDeViajeTheme
-import com.up.calculadoradeviaje.viewmodel.FuelTripViewModel
+import com.up.calculadoradeviaje.viewmodel.CalculoViajeViewModel
+import com.up.calculadoradeviaje.viewmodel.FormularioViajeViewModel
 
 class MainActivity : ComponentActivity() {
-    private val viewModel: FuelTripViewModel by viewModels()
+    private val formularioViewModel: FormularioViajeViewModel by viewModels()
+    private val calculoViewModel: CalculoViajeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +24,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             CalculadoraDeViajeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FuelTripScreen(
+                    PantallaCalculadoraViaje(
                         modifier = Modifier.padding(innerPadding),
-                        viewModel = viewModel
+                        formularioViewModel = formularioViewModel,
+                        calculoViewModel = calculoViewModel
                     )
                 }
             }
