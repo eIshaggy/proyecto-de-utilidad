@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Calculadora de Viaje</string>
+    <string name="distance_label">Distancia en km</string>
+    <string name="efficiency_label">Rendimiento: %.1f km/L</string>
+    <string name="fuel_type_label">Tipo de Combustible</string>
+    <string name="fuel_regular">Regular</string>
+    <string name="fuel_premium">Premium</string>
+    <string name="fuel_diesel">Diésel</string>
+    <string name="include_tolls">Incluir Casetas ($250.00)</string>
+    <string name="summary_title">Resumen del Viaje</string>
+    <string name="summary_liters">Litros necesarios: %s L</string>
+    <string name="summary_cost">Costo total: %s</string>
+    <string name="expense_low">Gasto Bajo</string>
+    <string name="expense_medium">Gasto Medio</string>
+    <string name="expense_high">Gasto Alto</string>
+    <string name="initial_message">Ingresa la distancia para calcular el costo.</string>
+</resources>
